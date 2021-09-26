@@ -31,3 +31,10 @@ if (!function_exists("bcrypt")) {
         return ApplicationContext::getContainer()->get(Bcrypt::class)->encrypt($str);
     }
 }
+
+if (!function_exists("bcrypt_check")) {
+    function bcrypt_check(string $value, string $hashedValue)
+    {
+        return ApplicationContext::getContainer()->get(Bcrypt::class)->check($value, $hashedValue);
+    }
+}

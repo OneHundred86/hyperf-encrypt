@@ -31,9 +31,10 @@ composer require "oh86/encrypt"
 >>> sm4_decrypt($encrypt)
 => "hello world"
 >>> 
->>> bcrypt("test")
-=> "$2y$10$jj93.f52XlQtXt5Gp7kwq.zkwRfBCMKIIkLf9AZNXFqSC5WV.bB9."
->>> 
+>>> $hash = bcrypt("hello")
+=> "$2y$10$.D6yacKBoPydxqH8Vg2s1unBRxIWWXV/IEqapNk9qGkTgUR9YWgde"
+>>> bcrypt_check("hello", $hash)
+=> true
 ```
 
 
