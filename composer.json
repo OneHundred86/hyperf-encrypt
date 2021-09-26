@@ -1,0 +1,48 @@
+{
+    "name": "oh86/encrypt",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "php",
+        "hyperf",
+        "encrypt",
+        "sm3",
+        "sm4",
+        "bcrypt"
+    ],
+    "description": "hypeft加密组件",
+    "autoload": {
+        "psr-4": {
+            "Oh86\\Encrypt\\": "src/"
+        },
+        "files": ["functions.php"]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "HyperfTest\\": "tests"
+        }
+    },
+    "require": {
+        "php": ">=7.2",
+        "ext-swoole": ">=4.5"
+    },
+    "require-dev": {
+        "friendsofphp/php-cs-fixer": "^2.14",
+        "phpstan/phpstan": "^0.12",
+        "hyperf/testing": "2.0.*",
+        "swoole/ide-helper": "dev-master"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "co-phpunit -c phpunit.xml --colors=always",
+        "analyse": "phpstan analyse --memory-limit 1024M -l 0 ./src",
+        "cs-fix": "php-cs-fixer fix $1"
+    },
+    "extra": {
+        "hyperf": {
+            "config": "Oh86\\Encrypt\\ConfigProvider"
+        }
+    }
+}
